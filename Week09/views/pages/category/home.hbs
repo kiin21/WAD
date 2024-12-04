@@ -1,0 +1,39 @@
+<div class="content-ctn border rounded">
+    <h4 class="bg-secondary p-2 rounded-top text-white">Main</h4>
+    <div class="m-3">
+        <a href="/category/add">
+            <button class="btn btn-success">Add category</button>
+        </a>
+    </div>
+    <div class="p-2">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col" class="text-end">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each catList}}
+                <tr style="cursor:pointer" class="clickable-user-row" id="{{this.CatID}}">
+                    <th class="align-middle">{{this.CatID}}</th>
+                    <td class="align-middle">{{this.CatName}}</td>
+                    <td class="align-middle text-end">
+                        <div class="d-inline-flex">
+                            <a href="/category/edit/{{this.CatID}}">
+                                <button type="submit" class="btn btn-warning btn-sm me-2">Edit</button>
+                            </a>
+
+                            <form action="/category/delete/{{this.CatID}}" method="POST"
+                                onsubmit="return confirm('Are you sure you want to delete this category?');">
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

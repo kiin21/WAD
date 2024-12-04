@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} - Error</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f6f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .error-container {
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .error-header {
+            background: linear-gradient(to right, #dc3545, #bd2130);
+        }
+
+        .error-icon {
+            font-size: 3rem;
+            color: #dc3545;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="card error-container">
+                    <div class="card-header error-header text-white d-flex align-items-center">
+                        <i class="bi bi-exclamation-triangle-fill me-3 error-icon"></i>
+                        <h4 class="mb-0">{{title}} - {{statusCode}}</h4>
+                    </div>
+                    <div class="card-body text-center">
+                        <div class="mb-4">
+                            <h2 class="card-title text-danger">Oops! Something went wrong</h2>
+                            <h5 class="card-subtitle mb-3 text-muted">{{message}}</h5>
+                            <p class="card-text text-muted">{{description}}</p>
+                        </div>
+                        <div class="d-grid">
+                            <a href="/user" class="btn btn-danger btn-lg">
+                                <i class="bi bi-house-fill me-2"></i>Back to Home
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted text-center">
+                        <small>If the problem persists, please contact support</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+</body>
+
+</html>

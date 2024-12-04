@@ -1,0 +1,28 @@
+<div class="content-ctn border rounded">
+    <h4 class="bg-secondary p-2 rounded-top">Main</h4>
+    </button>
+    <div class="p-2">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each users}}
+                <tr style="cursor:pointer" class="clickable-user-row" id="{{this.id}}">
+                    <th class="align-middle">{{this.ID}}</th>
+                    <td class="align-middle">{{this.Username}}</td>
+                    <td class="align-middle">{{this.Email}}</td>
+                    <td class="align-middle">
+                        <input type="password" value="{{this.Password}}" readonly />
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

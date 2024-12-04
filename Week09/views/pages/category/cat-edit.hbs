@@ -1,0 +1,28 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h4>Add New Category</h4>
+        </div>
+        <div class="card-body">
+            {{#if error}}
+            <div class="alert alert-danger mb-3" role="alert">
+                {{error}}
+            </div>
+            {{/if}}
+            <form action="/category/edit/{{cat.CatID}}"" method="POST">
+                <div class="mb-3">
+                    <label for="OldCatName" class="form-label">Old Category name</label>
+                    <input type="text" class="form-control" id="OldCatName" name="OldCatName" value="{{cat.CatName}}" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="CatName" class="form-label">New Category name</label>
+                    <input type="text" class="form-control" id="CatName" name="CatName">
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Update Category</button>
+                    <a href="/" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
