@@ -20,6 +20,9 @@ router.use('/user', userRoutes);
 // Use the category routes
 router.use('/category', categoryRoutes);
 
+// TODO: cook something else to replace this shit
+router.get('/', (req, res) => (res.redirect('user')));
+
 // Handle unexpected routes
 router.get('/*', (req, res, next) => {
     return next(new MyError(404, 'Page not found'));
